@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Nav from "./components/Nav";
+import Heading from "./components/Heading";
+import "./App.css";
+import Products from "./components/Products";
+import Cart from "./components/Cart";
+import { nukes } from "./utils/inventory";
 
-function App() {
+console.log(nukes);
+
+export default function App() {
+  const [cartOpen, setCartOpen] = useState(false);
+  const [cart, setCart] = useState([]);
+
+  const handleOpenCart = () => {
+    setCartOpen(true);
+  };
+
+  const handleCloseCart = () => {
+    setCartOpen(false);
+  };
+
+  const handleAddToCart = (product) => {
+    setCart([...cart, product]);
+  };
+
+  const handleRemoveFromCart = (product) => {
+    console.log("remove input!", product);
+    setCart(cart.filter((nuke) => nuke.name !== product.name));
+  };
+
+  console.log("cart:", cart);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Nav handleOpenCart={handleOpenCart} />
+      <Heading />
+      <Products nukes={nukes} handleAddToCart={handleAddToCart} />
+      <Cart
+        cart={cart}
+        cartOpen={cartOpen}
+        handleCloseCart={handleCloseCart}
+        handleRemoveFromCart={handleRemoveFromCart}
+      />
     </div>
   );
 }
-
-export default App;
