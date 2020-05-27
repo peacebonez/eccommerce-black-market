@@ -3,7 +3,9 @@ import { formatNumber } from "../utils/utility-funcs";
 
 export default function Product({ nuke, handleAddToCart, itemAdded }) {
   const { img, name, description, price } = nuke;
+
   const [isActive, setIsActive] = useState(false);
+
   const activeOn = () => {
     setIsActive(true);
   };
@@ -28,11 +30,7 @@ export default function Product({ nuke, handleAddToCart, itemAdded }) {
       </div>
       <div className="btn-container">
         <a>
-          <button
-            on
-            onClick={() => handleAddToCart(nuke)}
-            style={{ pointerEvents: itemAdded ? "none" : "all" }}
-          >
+          <button on onClick={() => handleAddToCart(nuke)}>
             Add to Cart
           </button>
         </a>

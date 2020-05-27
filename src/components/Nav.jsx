@@ -1,10 +1,10 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 
-export default function Nav({ handleOpenCart }) {
+export default function Nav({ handleOpenCart, cartLength }) {
   return (
     <div className="nav-container">
-      <a href="#">
+      <a href="">
         <h2>BLACK MARKET MARKET</h2>
       </a>
       <a href="#browse-header">
@@ -15,6 +15,7 @@ export default function Nav({ handleOpenCart }) {
           <FaShoppingCart />
         </button>
       </a>
+      {!cartLength ? null : <p id="cart-length">{cartLength}</p>}
     </div>
   );
 }
