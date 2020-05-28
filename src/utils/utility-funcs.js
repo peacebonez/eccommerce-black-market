@@ -10,3 +10,16 @@ export const formatNumber = (num) => {
   dec = numSplit[1];
   return `${int}.${dec}`;
 };
+
+let arr = ["bob", "mary", "doug", "mary"];
+
+const changeArr = (item, operator) => {
+  if (operator === "+") return [...arr, item];
+  if (operator === "-") {
+    arr.splice(arr.indexOf(item), 1);
+    return arr;
+  }
+};
+
+console.log(changeArr("shit", "+"));
+console.log(changeArr("mary", "-"));

@@ -8,18 +8,17 @@ export default function Cart({
   cartOpen,
   handleCloseCart,
   handleRemoveFromCart,
+  handleDecQuantity,
+  handleIncQuantity,
 }) {
+  const uniqueCart = [...new Set(cart)];
+
   const handleSubTotal = () => {
-    return cart.reduce((acc, nuke) => {
-      console.log("acc", acc);
-      console.log("nuke", nuke);
-      console.log("nuke.price", nuke.price);
-      return acc + nuke.price;
-    }, 0);
+    return cart.reduce((acc, nuke) => acc + nuke.price, 0);
   };
 
   let processing = cart.length * 5;
-  let subtotal = formatNumber(handleSubTotal());
+  let subtotal = handleSubTotal();
   return (
     <div className={`cart-container ${cartOpen ? "" : "cart-hidden"}`}>
       <div id="cart-header">
@@ -35,6 +34,8 @@ export default function Cart({
               nuke={nuke}
               key={nuke.id}
               handleRemoveFromCart={handleRemoveFromCart}
+              handleDecQuantity={handleDecQuantity}
+              handleIncQuantity={handleIncQuantity}
             />
           ))}
           <div className="cart-form">
@@ -42,7 +43,7 @@ export default function Cart({
               <li>
                 <div className="form-line">
                   <p>Sub Total</p>
-                  <p>${subtotal}</p>
+                  <p>${formatNumber(subtotal)}</p>
                 </div>
               </li>
               <li>
@@ -57,6 +58,7 @@ export default function Cart({
                     <b>Total</b>
                   </p>
                   <p>
+                    {/* <b>${formatNumber(processing + subtotal)}</b> */}
                     <b>${formatNumber(processing + subtotal)}</b>
                   </p>
                 </div>

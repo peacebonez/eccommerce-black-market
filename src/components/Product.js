@@ -30,9 +30,7 @@ export default function Product({ nuke, handleAddToCart, itemAdded }) {
       </div>
       <div className="btn-container">
         <a>
-          <button on onClick={() => handleAddToCart(nuke)}>
-            Add to Cart
-          </button>
+          <button onClick={() => handleAddToCart(nuke)}>Add to Cart</button>
         </a>
       </div>
       <p className="disclaimer">

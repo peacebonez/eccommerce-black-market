@@ -6,11 +6,10 @@ import Products from "./components/Products";
 import Cart from "./components/Cart";
 import { nukes } from "./utils/inventory";
 
-console.log(nukes);
-
 export default function App() {
   const [cartOpen, setCartOpen] = useState(false);
   const [cart, setCart] = useState([]);
+  const [quantity, setQuantity] = useState(1);
   const cartLength = cart.length;
   const handleOpenCart = () => {
     setCartOpen(true);
@@ -30,6 +29,15 @@ export default function App() {
     setCart(cart.filter((nuke) => nuke.name !== product.name));
   };
 
+  const handleDecQuantity = (item) => {
+    setQuantity((q) => q + 1);
+    setCart([...cart, item]);
+  };
+  const handleIncQuantity = (item) => {
+    setQuantity((q) => q - 1);
+    setCart(cart.splice(cart.indexOf(item), 1));
+  };
+
   useEffect(() => {});
 
   console.log("cart:", cart);
@@ -44,6 +52,8 @@ export default function App() {
         cartOpen={cartOpen}
         handleCloseCart={handleCloseCart}
         handleRemoveFromCart={handleRemoveFromCart}
+        handleDecQuantity={handleDecQuantity}
+        handleIncQuantity={handleIncQuantity}
       />
     </div>
   );

@@ -2,7 +2,12 @@ import React from "react";
 import { FaTimes } from "react-icons/fa";
 import { formatNumber } from "../utils/utility-funcs";
 
-export default function CartCard({ nuke, handleRemoveFromCart }) {
+export default function CartCard({
+  nuke,
+  handleRemoveFromCart,
+  handleDecQuantity,
+  handleIncQuantity,
+}) {
   const { name, description, price, img } = nuke;
   return (
     <div className="cart-card">
@@ -16,9 +21,9 @@ export default function CartCard({ nuke, handleRemoveFromCart }) {
           <b>${formatNumber(price)}</b>
         </p>
         <div className="card-btn-container">
-          <button>-</button>
+          <button onClick={() => handleDecQuantity(nuke)}>-</button>
           <p>1</p>
-          <button>+</button>
+          <button onClick={() => handleIncQuantity(nuke)}>+</button>
         </div>
       </div>
       <div className="card-x-container">
