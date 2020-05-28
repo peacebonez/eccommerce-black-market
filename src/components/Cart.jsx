@@ -1,5 +1,5 @@
-import React from "react";
-import { FaTimes } from "react-icons/fa";
+import React, { useEffect } from "react";
+import { FaTimes, FaShoppingCart } from "react-icons/fa";
 import CartCard from "./CartCard";
 import { formatNumber } from "../utils/utility-funcs";
 
@@ -10,26 +10,30 @@ export default function Cart({
   handleRemoveFromCart,
   handleDecQuantity,
   handleIncQuantity,
+  handleDemo,
 }) {
   const uniqueCart = [...new Set(cart)];
 
-  const handleSubTotal = () => {
-    return cart.reduce((acc, nuke) => acc + nuke.price, 0);
-  };
+  const handleSubTotal = () => cart.reduce((acc, nuke) => acc + nuke.price, 0);
 
   let processing = cart.length * 5;
   let subtotal = handleSubTotal();
+
+  useEffect(() => {
+    console.log(processing);
+  });
+
   return (
     <div className={`cart-container ${cartOpen ? "" : "cart-hidden"}`}>
       <div id="cart-header">
         <button id="cart-x" onClick={handleCloseCart}>
           <FaTimes />
         </button>
-        <h2>Cart</h2>
       </div>
+      <FaShoppingCart id="cart-icon" />
       {cart.length ? (
         <>
-          {cart.map((nuke) => (
+          {uniqueCart.map((nuke) => (
             <CartCard
               nuke={nuke}
               key={nuke.id}
@@ -65,7 +69,7 @@ export default function Cart({
               </li>
             </ul>
           </div>
-          <div className="next-container">
+          <div className="next-container" onClick={handleDemo}>
             <p>Next</p>
           </div>{" "}
         </>
@@ -73,7 +77,7 @@ export default function Cart({
         <div className="cart-empty-container">
           <h2>Shopping Cart Empty</h2>
           <img src="https://i.imgur.com/U49iioX.png" alt="fallout"></img>
-          <a href="#browse-header">
+          <a href="#products">
             <div className="shop-container" onClick={handleCloseCart}>
               <p>Shop Now</p>
             </div>

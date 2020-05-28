@@ -7,15 +7,16 @@ export default function Nav({ handleOpenCart, cartLength }) {
       <a href="">
         <h2>BLACK MARKET MARKET</h2>
       </a>
-      <a href="#browse-header">
+      <a href="#products">
         <h2 id="catalog">Catalog</h2>
       </a>
       <a href="#">
         <button id="cart" onClick={handleOpenCart}>
           <FaShoppingCart />
+          {!cartLength ? null : cartLength}
         </button>
       </a>
-      {!cartLength ? null : <p id="cart-length">{cartLength}</p>}
+      {/* {!cartLength ? null : <p id="cart-length">{cartLength}</p>} */}
     </div>
   );
 }

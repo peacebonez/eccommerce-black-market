@@ -1,25 +1,22 @@
-export const formatNumber = (num) => {
-  let numSplit, int, dec;
-  num = Math.abs(num).toFixed(2);
-  numSplit = num.split(".");
-  int = numSplit[0];
-  if (int.length > 3) {
-    int = int.substr(0, int.length - 3) + "," + int.substr(int.length - 3, 3); // input 2310 = 2,310
+export function formatNumber(nStr) {
+  nStr += "";
+  var x = nStr.split(".");
+  var x1 = x[0];
+  var x2 = x.length > 1 ? "." + x[1] : "";
+  var rgx = /(\d+)(\d{3})/;
+  while (rgx.test(x1)) {
+    x1 = x1.replace(rgx, "$1,$2");
   }
-
-  dec = numSplit[1];
-  return `${int}.${dec}`;
-};
+  return x1 + x2;
+}
 
 let arr = ["bob", "mary", "doug", "mary"];
 
 const changeArr = (item, operator) => {
   if (operator === "+") return [...arr, item];
+
   if (operator === "-") {
     arr.splice(arr.indexOf(item), 1);
     return arr;
   }
 };
-
-console.log(changeArr("shit", "+"));
-console.log(changeArr("mary", "-"));

@@ -57,16 +57,6 @@ a {
   color: #777;
 }
 
-#cart-length {
-  position: absolute;
-  right: 0;
-  top: 0;
-
-  color: black;
-  font-size: 16px;
-  transform: translate(-2.5rem, -0.6rem);
-}
-
 /* HEADER */
 
 .heading-container {
@@ -109,9 +99,9 @@ h1 {
   margin-top: 3vw;
 }
 
-/* CARDS */
+/* PRODUCT */
 
-#browse-header {
+#products {
   font-size: 2vw;
   margin: 4vw;
 }
@@ -128,7 +118,6 @@ h1 {
 .product-card img {
   width: 500px;
   height: 400px;
-  cursor: pointer;
 }
 
 .card-title-container {
@@ -146,7 +135,6 @@ h1 {
 
 .card-image-list-container {
   display: flex;
-  margin: 1vw;
 }
 
 .btn-container {
@@ -157,6 +145,7 @@ h1 {
 .btn-container button {
   padding: 1vw;
   font-size: 1vw;
+  min-width: 30vw;
   border: none;
   outline: none;
   color: #fff;
@@ -213,13 +202,14 @@ h1 {
 #cart-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
-#cart-header h2 {
-  color: #fff;
-  transform: translateX(-22vw);
-  font-size: 40px;
+#cart-icon {
+  color: #000;
+  font-size: 60px;
+  margin-bottom: 15px;
 }
 
 #cart-x {
@@ -249,6 +239,7 @@ h1 {
 
 .cart-card {
   display: flex;
+  align-items: center;
   width: 35vw;
   height: 230px;
   background: #fff;
@@ -259,6 +250,7 @@ h1 {
   position: absolute;
   display: flex;
   justify-content: flex-end;
+  align-self: start;
   margin: 5px 10px 0 0;
   width: inherit;
 }
@@ -294,7 +286,9 @@ h1 {
 
 .card-btn-container {
   display: flex;
+  /* transform: translateY(-1vw); */
 }
+
 .card-btn-container p {
   padding: 5px;
 }
@@ -304,7 +298,12 @@ h1 {
   outline: none;
   background: none;
   font-size: 24px;
+  min-width: 50px;
   cursor: pointer;
+}
+
+.card-btn-clicked {
+  background: blue;
 }
 
 .card-btn-container button:hover {
@@ -346,6 +345,10 @@ h1 {
 
 .next-container:hover {
   background: #94a4be;
+}
+
+.next-container:active {
+  background: #76859f;
 }
 
 .next-container p {
@@ -397,6 +400,15 @@ h1 {
   h3 {
     font-size: 2vw;
   }
+
+  .nav-container {
+    height: 6vh;
+  }
+
+  #cart {
+    font-size: 18px;
+  }
+
   .heading-container {
     height: 50vh;
   }
@@ -405,24 +417,33 @@ h1 {
     font-size: 4vw;
   }
 
+  #products {
+    font-size: 8vw;
+    text-align: center;
+  }
+
+  /* PRODUCTS */
+
   .product-card {
     width: 80vw;
-    margin: 2vh 0;
+    margin: 4vh 0;
+    min-height: 300px;
+    justify-content: flex-start;
   }
 
   .card-title-container h1 {
     font-size: 26px;
-    margin-left: 2vw;
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 50%;
   }
 
   .card-image-list-container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-
-  .card-image-list-container img {
-    width: 50%;
   }
 
   .btn-container {
@@ -437,19 +458,89 @@ h1 {
     margin-bottom: 1vh;
   }
 
-  #cart-container {
+  /* CART */
+
+  .cart-hidden {
+    right: -150vw;
+  }
+
+  .cart-container {
     position: fixed;
     height: 100vh;
     width: 100vw;
     z-index: 3;
   }
 
+  .card-text-container {
+    justify-content: center;
+    align-items: center;
+  }
+  .card-text-container p {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .cart-card {
+    flex-direction: column;
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+
+  .card-x-container {
+    margin: 0;
+    transform: translateY(-20vh);
+  }
+
+  .cart-card img {
+    margin-bottom: 3vh;
+    transform: translateY(2vh);
+    width: 50%;
+    height: 120px;
+  }
+
+  .cart-form {
+    width: 100vw;
+  }
+
+  .form-line {
+    width: 80vw;
+  }
+
+  .cart-empty-container {
+    transform: translateY(-25vh);
+  }
+
+  .cart-empty-container h2 {
+    font-size: 7vw;
+  }
+
+  .cart-empty-container img {
+    transform: translateY(-25vh);
+  }
+
+  #cart-x {
+    font-size: 10px;
+    padding: 15px;
+  }
+
   .cart-card {
     width: 80%;
   }
 
-  #cart-header h2 {
-    font-size: 5vw;
-    transform: translateX(-38vw);
+  #cart-icon {
+    font-size: 38px;
+    transform: translateY(-25vh);
+  }
+
+  .next-container {
+    width: 100vw;
+    padding: 6vw;
+  }
+  .shop-container {
+    width: 100vw;
+    padding: 6vw;
+    transform: translateY(25vh);
   }
 }

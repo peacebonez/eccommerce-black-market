@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { formatNumber } from "../utils/utility-funcs";
 
-export default function Product({ nuke, handleAddToCart, itemAdded }) {
+export default function Product({ nuke, handleAddToCart }) {
   const { img, name, description, price } = nuke;
 
   const [isActive, setIsActive] = useState(false);
+  const [wasClicked, setWasClicked] = useState(false);
 
   const activeOn = () => {
     setIsActive(true);
@@ -12,6 +13,11 @@ export default function Product({ nuke, handleAddToCart, itemAdded }) {
 
   const activeOff = () => {
     setIsActive(false);
+  };
+
+  const handleClicked = () => {
+    setWasClicked(true);
+    setTimeout(() => setWasClicked(false), 1000);
   };
 
   return (
@@ -30,7 +36,15 @@ export default function Product({ nuke, handleAddToCart, itemAdded }) {
       </div>
       <div className="btn-container">
         <a>
-          <button onClick={() => handleAddToCart(nuke)}>Add to Cart</button>
+          <button
+            className={wasClicked ? "card-btn-clicked" : ""}
+            onClick={() => {
+              handleAddToCart(nuke);
+              handleClicked();
+            }}
+          >
+            {wasClicked ? "Added!" : "Add to Cart"}
+          </button>
         </a>
       </div>
       <p className="disclaimer">
