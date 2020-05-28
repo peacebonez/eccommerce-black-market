@@ -185,7 +185,7 @@ h1 {
   height: 100vh;
   width: 50vw;
   right: 0;
-  background: #dfa0b2;
+  background: #e9a9bb;
   z-index: 3;
 
   justify-content: space-between;
@@ -491,6 +491,8 @@ h1 {
     align-items: center;
     justify-content: center;
     margin: 40px 0 5vh 0;
+
+    border-radius: 8px;
   }
 
   .card-x-container {
