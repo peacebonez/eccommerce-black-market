@@ -180,17 +180,17 @@ h1 {
 .cart-container {
   position: fixed;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   height: 100vh;
   width: 50vw;
   right: 0;
   background: #e9a9bb;
   z-index: 3;
 
-  justify-content: space-between;
-  overflow-y: scroll;
   overflow-x: hidden;
+  overflow-y: scroll;
 
   transition: right 0.3s;
 }
@@ -470,9 +470,7 @@ h1 {
   }
 
   .cart-container {
-    position: fixed;
     width: 100vw;
-    z-index: 3;
   }
 
   .card-text-container {
