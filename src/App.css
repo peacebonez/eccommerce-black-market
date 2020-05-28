@@ -485,21 +485,26 @@ h1 {
   }
 
   .cart-card {
+    width: 90%;
+    height: 500px;
     flex-direction: column;
-    margin-top: 40px;
-    justify-content: center;
     align-items: center;
-    /* min-height: 50vh; */
+    justify-content: center;
+    margin: 40px 0 5vh 0;
   }
 
   .card-x-container {
     margin: 0;
-    transform: translateY(-26vh);
+    transform: translateY(-17.5vh);
   }
 
   .cart-card img {
     width: 50%;
     height: 120px;
+  }
+
+  .card-price {
+    font-size: 5vw;
   }
 
   .cart-form {
@@ -528,12 +533,6 @@ h1 {
     padding: 15px;
   }
 
-  .cart-card {
-    width: 90%;
-    margin-bottom: 5vh;
-    height: 500px;
-  }
-
   #cart-icon {
     font-size: 38px;
     transform: translateY(-25vh);
@@ -542,10 +541,19 @@ h1 {
   .next-container {
     width: 100vw;
     padding: 6vw;
+    height: 12vh;
+  }
+  .next-container p {
+    font-size: 9vw;
   }
   .shop-container {
     width: 100vw;
     padding: 6vw;
+    height: 12vh;
     transform: translateY(25vh);
+  }
+
+  .shop-container p {
+    font-size: 9vw;
   }
 }

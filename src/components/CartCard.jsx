@@ -28,7 +28,7 @@ export default function CartCard({
         </p>
         <p className="card-description">{description}</p>
         <p>
-          <b>${formatNumber(price)}</b>
+          <b className="card-price">${formatNumber(price)}</b>
         </p>
         <div className="card-btn-container">
           <button
