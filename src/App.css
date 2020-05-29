@@ -450,7 +450,7 @@ h1 {
   }
 
   .cart-card {
-    height: 25vh;
+    height: 55vh;
   }
 
   .cart-card img {
@@ -477,6 +477,23 @@ h1 {
 
   .card-btn-container button {
     font-size: 14px;
+  }
+
+  .cart-form {
+    margin-top: 5vh;
+  }
+
+  .next-container {
+    height: 20vh;
+    margin-top: 10vh;
+  }
+  .next-container p {
+    font-size: 3vw;
+  }
+  .shop-container {
+    width: 100vw;
+    padding: 4vw;
+    height: 12vh;
   }
 }
 
@@ -649,6 +666,7 @@ h1 {
     width: 100vw;
     padding: 6vw;
     height: 12vh;
+    margin-top: 10vh;
   }
   .next-container p {
     font-size: 9vw;
