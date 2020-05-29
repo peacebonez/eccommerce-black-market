@@ -6,30 +6,28 @@ import Products from "./components/Products";
 import Cart from "./components/Cart";
 import { nukes } from "./utils/inventory";
 
-const demoHidden = {
-  color: "crimson",
-  position: "fixed",
-  fontSize: "20vw",
-  transform: "rotate(-45deg) translateY(-5vw)",
-  zIndex: "-4",
-  opacity: "0",
-  transition: "all 0.3s",
-};
-const demoShown = {
-  color: "crimson",
-  position: "fixed",
-  fontSize: "20vw",
-  transform: "rotate(-45deg) translateY(-5vw)",
-  zIndex: "4",
-  opacity: "1",
-  transition: "all 0.3s",
-};
-
 export default function App() {
   const [cartOpen, setCartOpen] = useState(false);
   const [cart, setCart] = useState([]);
   const [demoOn, setDemoOn] = useState(false);
   const cartLength = cart.length;
+
+  const demoHidden = {
+    color: "crimson",
+    position: "fixed",
+    fontSize: "20vw",
+    transform: "rotate(-45deg) translateY(-5vw)",
+    transition: "all 0.3s",
+    zIndex: "-4",
+    opacity: "0",
+  };
+
+  const demoShown = {
+    ...demoHidden,
+    zIndex: "4",
+    opacity: "1",
+  };
+
   const handleOpenCart = () => {
     setCartOpen(true);
   };
@@ -65,8 +63,13 @@ export default function App() {
       setDemoOn(false);
     }, 1000);
   };
-
-  useEffect(() => {}, [cartLength]);
+  useEffect(() => {
+    if (cartOpen) {
+      document.body.classList.add("overflow-y");
+    } else {
+      document.body.classList.remove("overflow-y");
+    }
+  }, [cartOpen]);
 
   console.log("cart:", cart);
 
