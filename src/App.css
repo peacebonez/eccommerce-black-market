@@ -531,6 +531,7 @@ h1 {
   .card-text-container {
     justify-content: center;
     align-items: center;
+    height: auto;
   }
   .card-text-container p {
     text-align: center;
