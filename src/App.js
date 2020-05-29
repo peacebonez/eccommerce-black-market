@@ -63,13 +63,13 @@ export default function App() {
       setDemoOn(false);
     }, 1000);
   };
-  useEffect(() => {
-    if (cartOpen) {
-      document.body.classList.add("overflow-y");
-    } else {
-      document.body.classList.remove("overflow-y");
-    }
-  }, [cartOpen]);
+  // useEffect(() => {
+  //   if (cartOpen) {
+  //     document.body.classList.add("overflow-y");
+  //   } else {
+  //     document.body.classList.remove("overflow-y");
+  //   }
+  // }, [cartOpen]);
 
   console.log("cart:", cart);
 
