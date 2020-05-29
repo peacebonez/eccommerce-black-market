@@ -404,6 +404,11 @@ h1 {
     height: 35vh;
   }
 
+  .cart-container {
+    height: auto;
+    overflow-y: scroll;
+  }
+
   .card-description {
     font-size: 12px;
   }
