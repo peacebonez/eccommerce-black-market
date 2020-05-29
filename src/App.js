@@ -63,21 +63,17 @@ export default function App() {
       setDemoOn(false);
     }, 1000);
   };
-  // useEffect(() => {
-  //   if (cartOpen) {
-  //     document.body.classList.add("overflow-y");
-  //   } else {
-  //     document.body.classList.remove("overflow-y");
-  //   }
-  // }, [cartOpen]);
 
-  console.log("cart:", cart);
+  // console.log("cart:", cart);
+  console.log("cartOpen?", cartOpen);
 
   return (
-    <div className="container">
-      <Nav handleOpenCart={handleOpenCart} cartLength={cartLength} />
-      <Heading />
-      <Products nukes={nukes} handleAddToCart={handleAddToCart} />
+    <>
+      <div className={cartOpen ? "noscroll container" : "container"}>
+        <Nav handleOpenCart={handleOpenCart} cartLength={cartLength} />
+        <Heading />
+        <Products nukes={nukes} handleAddToCart={handleAddToCart} />
+      </div>
       <Cart
         cart={cart}
         cartOpen={cartOpen}
@@ -90,6 +86,6 @@ export default function App() {
       <h1 id="demo" style={demoOn ? demoShown : demoHidden}>
         DEMO
       </h1>
-    </div>
+    </>
   );
 }

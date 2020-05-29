@@ -13,8 +13,9 @@ body {
   box-sizing: border-box;
 }
 
-.overflow-y {
-  overflow-y: hidden;
+.noscroll {
+  position: fixed;
+  /* overflow: hidden; */
 }
 
 li {
@@ -394,6 +395,11 @@ h1 {
 /* MEDIA QUERY 769 */
 
 @media only screen and (max-width: 769px) {
+  body {
+    /* position: absolute; */
+    /* overflow: hidden; */
+  }
+
   .product-card {
     width: 40vw;
     min-height: 25vh;
@@ -406,7 +412,6 @@ h1 {
 
   .cart-container {
     height: auto;
-    overflow-y: scroll;
   }
 
   .card-description {
@@ -526,12 +531,13 @@ h1 {
 
   .cart-container {
     width: 100vw;
+    min-height: 100vh;
   }
 
   .card-text-container {
     justify-content: center;
     align-items: center;
-    height: auto;
+    min-height: 100vh;
   }
   .card-text-container p {
     text-align: center;
