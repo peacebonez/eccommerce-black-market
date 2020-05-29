@@ -18,7 +18,6 @@ export default function CartCard({
   const handleAdd = () => {
     setQuantity((q) => q + 1);
   };
-  console.log("quantity", quantity);
   return (
     <div className="cart-card">
       <img src={img} alt="product" />

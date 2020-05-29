@@ -27,13 +27,11 @@ export default function App() {
   };
 
   const handleRemoveFromCart = (product) => {
-    console.log("remove input!", product);
     setCart(cart.filter((nuke) => nuke.name !== product.name));
   };
 
   const handleDecQuantity = (item) => {
     let _cart = cart;
-    console.log("cart copy", _cart);
     if (_cart.length === 1) return;
     _cart.splice(_cart.lastIndexOf(item), 1);
     setCart([..._cart]);
@@ -49,26 +47,26 @@ export default function App() {
     }, 1000);
   };
 
-  // console.log("cart:", cart);
-  console.log("cartOpen?", cartOpen);
+  console.log("cart:", cart);
 
   return (
     <>
-      <div className={cartOpen ? "noscroll container" : "container"}>
+      <div className="container">
+        {/* <div className={cartOpen ? "noscroll container" : "container"}> */}
         <Nav handleOpenCart={handleOpenCart} cartLength={cartLength} />
         <Heading />
         <Products nukes={nukes} handleAddToCart={handleAddToCart} />
+        <Cart
+          cart={cart}
+          cartOpen={cartOpen}
+          handleCloseCart={handleCloseCart}
+          handleRemoveFromCart={handleRemoveFromCart}
+          handleDecQuantity={handleDecQuantity}
+          handleIncQuantity={handleIncQuantity}
+          handleDemo={handleDemo}
+        />
+        <Demo demoOn={demoOn} />
       </div>
-      <Cart
-        cart={cart}
-        cartOpen={cartOpen}
-        handleCloseCart={handleCloseCart}
-        handleRemoveFromCart={handleRemoveFromCart}
-        handleDecQuantity={handleDecQuantity}
-        handleIncQuantity={handleIncQuantity}
-        handleDemo={handleDemo}
-      />
-      <Demo demoOn={demoOn} />
     </>
   );
 }

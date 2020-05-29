@@ -61,6 +61,7 @@ a {
   outline: none;
   cursor: pointer;
   font-size: 1.7vw;
+  font-family: monospace;
 }
 
 #cart:hover {
@@ -126,8 +127,6 @@ h1 {
 }
 
 .product-card img {
-  /* width: 500px; */
-  /* height: 400px; */
   width: 30vw;
   height: 30vw;
 }
@@ -204,7 +203,7 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   width: 50vw;
   right: 0;
   background: #e9a9bb;
@@ -433,7 +432,7 @@ h1 {
   }
 
   .cart-container {
-    height: auto;
+    height: 100vh;
   }
 
   .card-title-container p {

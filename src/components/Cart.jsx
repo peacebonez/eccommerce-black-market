@@ -19,10 +19,6 @@ export default function Cart({
   let processing = cart.length * 5;
   let subtotal = handleSubTotal();
 
-  useEffect(() => {
-    console.log(processing);
-  });
-
   return (
     <div className={`cart-container ${cartOpen ? "" : "cart-hidden"}`}>
       <div id="cart-header">
