@@ -53,7 +53,7 @@ export default function Cart({
                 </div>
               </li>
               <li>
-                <div className="form-line">
+                <div className="form-line total">
                   <p>
                     <b>Total</b>
                   </p>

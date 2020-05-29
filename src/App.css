@@ -354,6 +354,10 @@ h1 {
   color: #444;
 }
 
+.total {
+  border-top: solid 4px white;
+}
+
 .next-container {
   display: flex;
   justify-content: center;
@@ -701,6 +705,15 @@ h1 {
     margin: 4vw;
   }
 
+  .card-text-container b {
+    font-size: 2vw;
+  }
+
+  .card-description {
+    font-size: 1.4vw;
+    margin: 0;
+  }
+
   .card-btn-container p {
     font-size: 2vw;
   }
@@ -709,10 +722,23 @@ h1 {
     font-size: 2vw;
   }
 
+  .cart-form {
+    width: 75vw;
+  }
+
+  .form-line {
+    display: flex;
+    width: 75vw;
+    justify-content: space-between;
+    border-top: 1px solid black;
+
+    transform: translateX(-2vw);
+  }
+
   .next-container {
-    font-size: 3vw;
-    padding: 2vw;
-    margin-bottom: 10vw;
+    font-size: 2.5vw;
+    padding: 3vw;
+    margin: 10vh 0;
   }
 
   .cart-empty-container {
