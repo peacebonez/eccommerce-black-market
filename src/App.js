@@ -4,6 +4,7 @@ import Heading from "./components/Heading";
 import "./App.css";
 import Products from "./components/Products";
 import Cart from "./components/Cart";
+import Demo from "./components/Demo";
 import { nukes } from "./utils/inventory";
 
 export default function App() {
@@ -11,22 +12,6 @@ export default function App() {
   const [cart, setCart] = useState([]);
   const [demoOn, setDemoOn] = useState(false);
   const cartLength = cart.length;
-
-  const demoHidden = {
-    color: "crimson",
-    position: "fixed",
-    fontSize: "20vw",
-    transform: "rotate(-45deg) translateY(-5vw)",
-    transition: "all 0.3s",
-    zIndex: "-4",
-    opacity: "0",
-  };
-
-  const demoShown = {
-    ...demoHidden,
-    zIndex: "4",
-    opacity: "1",
-  };
 
   const handleOpenCart = () => {
     setCartOpen(true);
@@ -83,9 +68,7 @@ export default function App() {
         handleIncQuantity={handleIncQuantity}
         handleDemo={handleDemo}
       />
-      <h1 id="demo" style={demoOn ? demoShown : demoHidden}>
-        DEMO
-      </h1>
+      <Demo demoOn={demoOn} />
     </>
   );
 }
