@@ -663,22 +663,34 @@ h1 {
   }
 
   .next-container {
-    width: 100vw;
+    width: 75vw;
     padding: 6vw;
     height: 12vh;
-    margin-top: 10vh;
+    margin: 10vh 0;
   }
   .next-container p {
     font-size: 9vw;
   }
   .shop-container {
-    width: 100vw;
-    padding: 6vw;
-    height: 12vh;
-    transform: translateY(25vh);
+    width: 50vw;
   }
 
   .shop-container p {
-    font-size: 9vw;
+    font-size: 8vw;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-height: 515px) {
+  .cart-card {
+    height: 45vh;
+  }
+
+  .card-btn-container p {
+    font-size: 2vw;
+  }
+
+  .card-btn-container button {
+    font-size: 2vw;
   }
 }
