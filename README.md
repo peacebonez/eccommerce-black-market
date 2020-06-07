@@ -4,4 +4,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This is an MVP (Minimum Viable Product) of an ecommerce web store
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Fortunately for the planet, the products are not currently available for sale.
